@@ -141,9 +141,9 @@ public class WaveView extends BaseSurfaceView {
 
         //波形函数的值，包括上一点，当前点和下一点
         float lastV, curV = 0, nextV = (float) (amplitude * calcValue(mapX[0], offset));
-        //波形函数的绝对值，用于筛选波峰和波谷
+        //波形函数的绝对值，用于筛选波峰和交错点
         float absLastV, absCurV, absNextV;
-        //上一个筛选出的点是波峰还是波谷
+        //上一个筛选出的点是波峰还是交错点
         boolean lastIsCrest = false;
         //筛选出的波峰和交叉点的数量，包括起点和终点
         int crestAndCrossCount = 0;
