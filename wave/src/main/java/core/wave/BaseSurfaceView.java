@@ -86,6 +86,12 @@ public abstract class BaseSurfaceView extends SurfaceView implements SurfaceHold
         }
     }
 
+    /**
+     * 渲染surfaceView的回调方法。
+     *
+     * @param canvas       画布
+     * @param millisPassed 从开始回到到现在过去的毫秒数
+     */
     protected abstract void onRender(Canvas canvas, long millisPassed);
 
 }
