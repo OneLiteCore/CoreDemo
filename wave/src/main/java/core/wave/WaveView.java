@@ -49,7 +49,7 @@ public class WaveView extends BaseSurfaceView {
      * 采样点的数量，越高越精细，
      * 但高于一定限度后人眼察觉不出。
      */
-    private static final int SAMPLING_SIZE = 128;
+    private static final int SAMPLING_SIZE = 64;
     /**
      * 采样点的X
      */
@@ -235,7 +235,7 @@ public class WaveView extends BaseSurfaceView {
     /**
      * 计算波形函数中x对应的y值
      *
-     * @param mapX   x值
+     * @param mapX   换算到[-2,2]之间的x值
      * @param offset 偏移量
      * @return
      */
