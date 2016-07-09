@@ -15,10 +15,6 @@ import android.util.AttributeSet;
 
 public class WaveView extends BaseSurfaceView {
 
-    static {
-        System.loadLibrary("wave");
-    }
-
     private static final String TAG = "WaveView";
 
     public WaveView(Context context) {
@@ -244,11 +240,8 @@ public class WaveView extends BaseSurfaceView {
      * @return
      */
     private double calcValue(float mapX, float offset) {
-//        double sinFunc = Math.sin(0.75 * Math.PI * mapX - offset * Math.PI);
-//        double recessionFunc = Math.pow(4 / (4 + Math.pow(mapX, 4)), 2.5);
-//        double res = sinFunc * recessionFunc;
-        return nativeCalcValue(mapX, offset);
+        double sinFunc = Math.sin(0.75 * Math.PI * mapX - offset * Math.PI);
+        double recessionFunc = Math.pow(4 / (4 + Math.pow(mapX, 4)), 2.5);
+        return sinFunc * recessionFunc;
     }
-
-    private native double nativeCalcValue(float mapX, float offset);
 }

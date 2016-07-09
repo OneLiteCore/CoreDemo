@@ -14,9 +14,6 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            ndk {
-                moduleName "jni"
-            }
         }
     }
 }
