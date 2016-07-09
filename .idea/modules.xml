@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CoreDemo.iml" filepath="$PROJECT_DIR$/CoreDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/wave/app.iml" filepath="$PROJECT_DIR$/wave/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/wave/wave.iml" filepath="$PROJECT_DIR$/wave/wave.iml" />
     </modules>
   </component>
