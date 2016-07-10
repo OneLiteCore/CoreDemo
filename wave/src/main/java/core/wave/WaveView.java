@@ -240,6 +240,7 @@ public class WaveView extends BaseSurfaceView {
      * @return
      */
     private double calcValue(float mapX, float offset) {
+        offset %= 2;
         double sinFunc = Math.sin(0.75 * Math.PI * mapX - offset * Math.PI);
         double recessionFunc = Math.pow(4 / (4 + Math.pow(mapX, 4)), 2.5);
         return sinFunc * recessionFunc;
