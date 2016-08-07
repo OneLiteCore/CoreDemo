@@ -1,4 +1,4 @@
-package core.wave;
+package core.demo;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

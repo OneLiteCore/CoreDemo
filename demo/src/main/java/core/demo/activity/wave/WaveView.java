@@ -1,4 +1,4 @@
-package core.wave;
+package core.demo.activity.wave;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -13,7 +13,9 @@ import android.graphics.Shader;
 import android.graphics.Xfermode;
 import android.util.AttributeSet;
 
-public class WaveView extends BaseSurfaceView {
+import core.demo.widget.RenderView;
+
+public class WaveView extends RenderView {
 
     private static final String TAG = "WaveView";
 

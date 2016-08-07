@@ -1,4 +1,4 @@
-package core.wave;
+package core.demo;
 
 import org.junit.Test;
 
