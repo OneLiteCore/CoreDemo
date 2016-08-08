@@ -74,6 +74,7 @@ public class SortActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         String title = item.getTitle().toString();
         if ("Reset".equals(title)) {
+            handler.removeCallbacksAndMessages(null);
             sortView.display(getRandomIntArray());
         } else {
             Class clz = sorts.get(title);
@@ -84,13 +85,14 @@ public class SortActivity extends AppCompatActivity {
 
     /*排序*/
 
-    public static final int INTERVAL = 256;
+    public static final int TIME = 16 * 1000;
 
     public void startSort(Class sort) {
         Toast.makeText(this, "Sort " + sort.getSimpleName(), Toast.LENGTH_LONG).show();
         try {
             AbsSort instance = (AbsSort) sort.newInstance();
             final List<int[]> frames = instance.sort(sortView.getValues());
+            final int interval = frames.size() <= 8 ? 128 : (int) (TIME / (float) frames.size());
             handler.postDelayed(new Runnable() {
 
                 int idx = 0;
@@ -98,14 +100,15 @@ public class SortActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     if (idx == frames.size()) {
+                        Toast.makeText(SortActivity.this, "Sort Complete", Toast.LENGTH_LONG).show();
                         return;
                     }
 
                     int[] frame = frames.get(idx++);
                     sortView.display(frame);
-                    handler.postDelayed(this, INTERVAL);
+                    handler.postDelayed(this, interval);
                 }
-            }, INTERVAL);
+            }, interval);
         } catch (Exception e) {
             e.printStackTrace();
         }
