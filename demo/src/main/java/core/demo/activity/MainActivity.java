@@ -16,7 +16,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import core.demo.R;
-import core.demo.util.ClassUtil;
+import core.mate.util.ClassUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         layout.addView(listView);
 
         try {//动态获取activity包下的所有Activity
-            List<Class> acts = ClassUtil.getSubClassUnderPackage(AppCompatActivity.class, "core.demo.activity");
+            List<Class> acts = ClassUtil.getSubClassUnderPackage(AppCompatActivity.class, getClass().getPackage().toString() );
             acts.remove(MainActivity.class);
             listView.setAdapter(new Adapter(acts));
         } catch (Throwable e) {

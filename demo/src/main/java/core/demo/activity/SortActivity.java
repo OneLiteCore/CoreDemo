@@ -17,8 +17,8 @@ import java.util.Map;
 import core.demo.R;
 import core.demo.activity.sort.AbsSort;
 import core.demo.activity.sort.SortView;
-import core.demo.util.ClassUtil;
-import core.demo.util.RandomUtil;
+import core.mate.util.ClassUtil;
+import core.mate.util.RandomUtil;
 
 public class SortActivity extends AppCompatActivity {
 
