@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         layout.addView(listView);
 
         try {//动态获取activity包下的所有Activity
-            List<Class> acts = ClassUtil.getSubClassUnderPackage(AppCompatActivity.class, getClass().getPackage().toString() );
+            List<Class> acts = ClassUtil.getSubClassUnderPackage(AppCompatActivity.class, getClass().getPackage().getName() );
             acts.remove(MainActivity.class);
             listView.setAdapter(new Adapter(acts));
         } catch (Throwable e) {
