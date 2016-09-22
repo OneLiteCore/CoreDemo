@@ -1,4 +1,4 @@
-package core.demo.activity.sort;
+package core.demo.frag.sort;
 
 public class InsertSort extends AbsSort {
 

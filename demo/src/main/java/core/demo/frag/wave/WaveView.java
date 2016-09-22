@@ -1,4 +1,4 @@
-package core.demo.activity.wave;
+package core.demo.frag.wave;
 
 import android.content.Context;
 import android.graphics.Canvas;

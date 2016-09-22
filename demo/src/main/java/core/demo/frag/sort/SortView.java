@@ -1,4 +1,4 @@
-package core.demo.activity.sort;
+package core.demo.frag.sort;
 
 import android.content.Context;
 import android.graphics.Canvas;

@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 24
@@ -16,12 +17,16 @@ android {
             minifyEnabled false
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'core.mate:core:1.0.4'
-    compile 'core.mate:xutils:1.0.4'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'core.mate:core:1.0.5'
+    compile 'com.android.support:support-v4:24.2.1'
 }

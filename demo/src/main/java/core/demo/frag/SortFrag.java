@@ -1,46 +1,48 @@
-package core.demo.activity;
+package core.demo.frag;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.util.ArrayMap;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
-import android.widget.Toast;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.List;
 import java.util.Map;
 
-import core.demo.R;
-import core.demo.activity.sort.AbsSort;
-import core.demo.activity.sort.SortView;
+import core.demo.frag.sort.AbsSort;
+import core.demo.frag.sort.SortView;
 import core.mate.util.ClassUtil;
 import core.mate.util.RandomUtil;
+import core.mate.util.ToastUtil;
 
-public class SortActivity extends AppCompatActivity {
+public class SortFrag extends Fragment {
 
     private Map<String, Class> sorts;
-    private SortView sortView;
 
     private Handler handler = new Handler();
 
+    private SortView sortView;
+
+    @Nullable
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
+        return sortView = new SortView(getContext());
+    }
 
-        LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout);
-        layout.addView(sortView = new SortView(this));
-
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         sortView.display(getRandomIntArray());
 
         try {
-            List<Class> classes = ClassUtil.getSubClassUnderPackage(AbsSort.class, "core.demo.activity.sort");
+            List<Class> classes = ClassUtil.getSubClassUnderPackage(AbsSort.class, "core.demo.frag.sort");
             sorts = new ArrayMap<>(classes.size());
             for (Class clz : classes) {
                 sorts.put(clz.getSimpleName(), clz);
@@ -52,13 +54,14 @@ public class SortActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         handler.removeCallbacksAndMessages(null);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
         try {
             menu.add("Reset");
             for (Map.Entry<String, Class> sort : sorts.entrySet()) {
@@ -67,7 +70,6 @@ public class SortActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -88,7 +90,7 @@ public class SortActivity extends AppCompatActivity {
     public static final int TIME = 16 * 1000;
 
     public void startSort(Class sort) {
-        Toast.makeText(this, "Sort " + sort.getSimpleName(), Toast.LENGTH_LONG).show();
+        ToastUtil.toastShort("Sort " + sort.getSimpleName());
         try {
             AbsSort instance = (AbsSort) sort.newInstance();
             final List<int[]> frames = instance.sort(sortView.getValues());
@@ -100,7 +102,7 @@ public class SortActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     if (idx == frames.size()) {
-                        Toast.makeText(SortActivity.this, "Sort Complete", Toast.LENGTH_LONG).show();
+                        ToastUtil.toastShort("Sort Complete");
                         return;
                     }
 

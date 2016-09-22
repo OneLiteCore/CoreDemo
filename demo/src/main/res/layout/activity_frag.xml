@@ -11,4 +11,9 @@
         android:layout_height="48dp"
         android:background="@android:color/holo_blue_dark" />
 
+    <FrameLayout
+        android:id="@+id/frameLayout_frag_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>
