@@ -4,6 +4,25 @@
 
 每写一个Demo我都会尽量详细地记录下实现的步骤，如果你能够在其中找点些许乐趣，那便是鄙人无上的光荣了。
 
+## 竜人の剣を喰え
+守望先锋作为当下最有火爆的射击游戏之一为我们带了一波网络用语的节奏，你要是不会一句 ***“溜金哇开呀酷裂”*** 都不好意思说自己玩过屁股。
+
+作为Android狗笔者最近想写个Loading界面掌握一些新姿势，索性实现一下守望先锋游戏界面的加载图吧。
+
+原版效果如下：
+
+![治疗颈椎病的加载图](https://raw.githubusercontent.com/DrkCore/CoreDemo/master/doc/img/OverWatcherLoading.gif)
+
+该截图具有治疗颈椎病的效果，所以请不要在意这5毛画质。
+
+只要你还没有把高中数学全部还给老师的话花点时间都做得出来，效果如下:
+
+![效果](https://raw.githubusercontent.com/DrkCore/CoreDemo/master/doc/img/OverWatch.gif)
+
+具体实现可参阅博客：
+
+[Android：Loading动画——竜人の剣を喰え](http://blog.csdn.net/drkcore/article/details/52664088)
+
 ## 自绘动画实践——以Tencent OS录音机波形为例
 效果图如下：
 
