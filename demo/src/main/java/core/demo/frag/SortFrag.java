@@ -33,12 +33,8 @@ public class SortFrag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         setHasOptionsMenu(true);
-        return sortView = new SortView(getContext());
-    }
+        sortView = new SortView(getContext());
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
         sortView.display(getRandomIntArray());
 
         try {
@@ -51,6 +47,7 @@ public class SortFrag extends Fragment {
             e.printStackTrace();
         }
 
+        return sortView;
     }
 
     @Override
