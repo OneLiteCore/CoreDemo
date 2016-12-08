@@ -13,8 +13,6 @@ import android.graphics.Shader;
 import android.graphics.Xfermode;
 import android.util.AttributeSet;
 
-import core.demo.widget.RenderView;
-
 public class WaveView extends RenderView {
 
     private static final String TAG = "WaveView";
