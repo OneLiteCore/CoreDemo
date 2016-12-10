@@ -173,17 +173,13 @@ public class OperationManager implements TextWatcher {
     @Override
     public void afterTextChanged(Editable s) {
         if (enable && opt != null) {
-            onNewEditOperation(opt);
+            if (!redoOpts.isEmpty()) {
+                redoOpts.clear();
+            }
+            
+            undoOpts.push(opt);
         }
         opt = null;
-    }
-    
-    private void onNewEditOperation(EditOperation editOperation) {
-        if (!redoOpts.isEmpty()) {
-            redoOpts.clear();
-        }
-        
-        undoOpts.push(editOperation);
     }
     
     private final LinkedList<EditOperation> undoOpts = new LinkedList<>();
