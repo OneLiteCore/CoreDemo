@@ -32,7 +32,7 @@ public class FragActivity extends AppCompatActivity {
         if (fragMgr.findFragmentByTag(tag) == null) {
             try {
                 fragMgr.beginTransaction()
-                        .add(R.id.frameLayout_frag_container, (Fragment) clz.newInstance())
+                        .add(R.id.frameLayout_frag_container, (Fragment) clz.newInstance(), tag)
                         .commit();
             } catch (Exception e) {
                 e.printStackTrace();

@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">CoreDemo</string>
+    <string name="undo">撤销</string>
+    <string name="redo">重做</string>
+    <string name="please_input_text">请输入文字</string>
 </resources>

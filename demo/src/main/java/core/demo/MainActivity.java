@@ -9,13 +9,14 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import core.demo.frag.EditFrag;
 import core.demo.frag.OverWatchFrag;
 import core.demo.frag.SortFrag;
 import core.demo.frag.WaveFrag;
 
 public class MainActivity extends AppCompatActivity {
     
-    private static final Class[] FRAGS = {OverWatchFrag.class, SortFrag.class, WaveFrag.class};
+    private static final Class[] FRAGS = {EditFrag.class, OverWatchFrag.class, SortFrag.class, WaveFrag.class};
     
     private class FragAdapter extends BaseAdapter {
         
