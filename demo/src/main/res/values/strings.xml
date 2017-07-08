@@ -2,5 +2,10 @@
     <string name="app_name">CoreDemo</string>
     <string name="undo">撤销</string>
     <string name="redo">重做</string>
+    <string name="go">GO</string>
     <string name="please_input_text">请输入文字</string>
+    <string name="no_start_location">起点：未选择</string>
+    <string name="no_end_location">终点：未选择</string>
+    <string name="no_map">地图：未选择</string>
+    <string name="please_select">请选择</string>
 </resources>

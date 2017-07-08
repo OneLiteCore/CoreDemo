@@ -21,6 +21,16 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
@@ -28,4 +38,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.0.1'
     compile 'com.android.support:support-v4:25.0.1'
+
+    compile(name: 'core', ext: 'aar')
 }

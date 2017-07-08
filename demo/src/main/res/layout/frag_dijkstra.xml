@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <fragment
+        android:id="@+id/fragment_dijkstra_nav"
+        class="core.demo.frag.dijkstra.NavFrag"
+        android:layout_width="@dimen/width_frag_nav"
+        android:layout_height="match_parent"
+        tools:layout="@layout/frag_nav"/>
+
+    <fragment
+        android:id="@+id/fragment_dijkstra_map"
+        class="core.demo.frag.dijkstra.MapFrag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

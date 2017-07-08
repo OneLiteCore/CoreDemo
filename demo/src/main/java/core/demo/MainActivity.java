@@ -9,52 +9,62 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import core.demo.frag.DijkstraFrag;
 import core.demo.frag.EditFrag;
 import core.demo.frag.OverWatchFrag;
 import core.demo.frag.SortFrag;
 import core.demo.frag.WaveFrag;
+import core.mate.Core;
 
 public class MainActivity extends AppCompatActivity {
-    
-    private static final Class[] FRAGS = {EditFrag.class, OverWatchFrag.class, SortFrag.class, WaveFrag.class};
-    
+
+    private static final Class[] FRAGS = {
+            EditFrag.class,
+            OverWatchFrag.class,
+            SortFrag.class,
+            WaveFrag.class,
+            DijkstraFrag.class};
+
     private class FragAdapter extends BaseAdapter {
-        
+
         @Override
         public int getCount() {
             return FRAGS.length;
         }
-        
+
         @Override
         public Class getItem(int position) {
             return FRAGS[position];
         }
-        
+
         @Override
         public long getItemId(int position) {
             return position;
         }
-        
+
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             TextView textView = (TextView) convertView;
             if (textView == null) {
                 textView = (TextView) getLayoutInflater().inflate(android.R.layout.simple_list_item_1, parent, false);
             }
-            
+
             textView.setText(getItem(position).getSimpleName());
-            
+
             return textView;
         }
     }
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //初始化辅助工具
+        Core.getInstance().init(getApplication());
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        
+
         ListView listView = (ListView) findViewById(R.id.listView_main);
         FragAdapter adapter = new FragAdapter();
         listView.setAdapter(adapter);

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/width_frag_nav"
+    android:layout_height="match_parent"
+    android:background="@color/soft_dark"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/button_frag_nav_startLocation"
+        style="@style/NavTextStyle"
+        android:background="@drawable/sl_frag_nav_start"
+        android:text="@string/please_select"/>
+
+    <Button
+        android:id="@+id/button_frag_nav_endLocation"
+        style="@style/NavTextStyle"
+        android:background="@drawable/sl_frag_nav_end"
+        android:text="@string/please_select"/>
+
+    <Button
+        android:id="@+id/button_frag_nav_go"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/core_sl_holo_green_darker"
+        android:text="@string/go"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

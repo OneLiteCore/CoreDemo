@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/width_frag_nav"
+    android:layout_height="match_parent"
+    android:background="@color/soft_dark"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/radioGroup_dlg_selectLocation"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButton_dlg_selectLocation_first"
+            style="@style/DlgTabStyle"/>
+
+        <RadioButton
+            android:id="@+id/radioButton_dlg_selectLocation_second"
+            style="@style/DlgTabStyle"/>
+
+        <RadioButton
+            android:id="@+id/radioButton_dlg_selectLocation_third"
+            style="@style/DlgTabStyle"/>
+
+    </RadioGroup>
+
+    <ListView
+        android:id="@+id/listView_dlg_selectLocation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
