@@ -10,7 +10,7 @@
 
 地图的数据来自杭州电子科技大学第一教学楼的火险逃生示意图
 
-![](./doc/img/dijkstraDemo.png)
+![](./doc/img/DijkstraDemo.png)
 
 ## 基于EditText实现撤销重做机制
 ![撤销和重做](./doc/img/UndoAndRedo.gif)
