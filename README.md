@@ -6,6 +6,12 @@
 
 当然，**如果能给我个小小的start的话，那也是极好的！**
 
+## Dijkstra 实现 + 自定义控件绘图 + 手势缩放和移动
+
+地图的数据来自杭州电子科技大学第一教学楼的火险逃生示意图
+
+![](./doc/img/dijkstraDemo.png)
+
 ## 基于EditText实现撤销重做机制
 ![撤销和重做](./doc/img/UndoAndRedo.gif)
 
